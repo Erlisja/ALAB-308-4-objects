@@ -57,3 +57,33 @@ for (let i = 1; i < dimArray.length; i++) {
     objectsArray.push(obj);
 }console.log(objectsArray);
 
+//  Part 4: Sorting and Manipulatiog Data
+
+/* Using array methods, accomplish the following tasks, in order upon the result of Part 3:
+
+
+Add the following object to the end of the array:
+{ id: "7", name: "Bilbo", occupation: "None", age: "111" }
+ */
+
+//Remove the last element from the sorted array.
+objectsArray.pop();
+console.log(objectsArray);
+//Insert the following object at index 1: { id: "48", name: "Barry", occupation: "Runner", age: "25" }
+objectsArray.splice(1, 0, { id: "48", name: "Barry", occupation: "Runner", age: "25" });
+console.log(objectsArray);
+//Add the following object to the end of the array: { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+objectsArray.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
+console.log(objectsArray);
+
+/* Finally, use the values of each object within the array and the array’s length property to calculate the average age of the group. 
+This calculation should be accomplished using a loop. */
+// Calculate the average age of the group
+let avgAge = 0;
+let total = 0;
+for (const objAge of objectsArray){
+     total += parseInt(objAge.age);   // parseInt converts the age (which is string) to a number
+     console.log(total);
+}
+avgAge = total / objectsArray.length;
+console.log(`The average age of the group is: ${avgAge}`);
