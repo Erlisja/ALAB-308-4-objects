@@ -87,3 +87,20 @@ for (const objAge of objectsArray){
 }
 avgAge = total / objectsArray.length;
 console.log(`The average age of the group is: ${avgAge}`);
+
+
+//    Part 5: Full Circle
+//As a final task, transform the final set of data back into CSV format.
+
+let newCSVfile = "";
+for (const heading of headings){
+    newCSVfile += heading + ",";
+}
+newCSVfile = newCSVfile.slice(0, -1) + "\\n";
+for (const obj of objectsArray){
+    for (const heading of headings){
+        newCSVfile += obj[heading.toLowerCase()] + ",";
+    }
+    newCSVfile = newCSVfile.slice(0, -1) +"\\n";
+}
+console.log(newCSVfile);
